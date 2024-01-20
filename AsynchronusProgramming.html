@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Create a function that returns a promise
+    function myCalculator(num1, num2) {
+      let myPromise = new Promise(function(myResolve, myReject) {
+        let sum = num1 + num2;
+        if (sum > 5) {
+          myResolve("Success");
+        } else {
+          myReject("Fail");
+        }
+      });
+      return myPromise;
+    }
+
+    myCalculator(6, 3)
+    .then(function(value) {
+      console.log(value);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  </script>
+</body>
+</html>
